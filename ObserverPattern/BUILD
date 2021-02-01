@@ -12,8 +12,18 @@ cc_library(
     deps = [":interface"],
 )
 
-cc_binary(
-    name = "main",
-    srcs = ["main.cc"],
+cc_library(
+    name = "display",
+    srcs = ["Display.cc"],
+    hdrs = ["Display.h"],
     deps = [":weatherdata"],
 )
+
+cc_binary(
+    name = "main",
+    srcs = ["WeatherDataStation.cc"],
+    deps = [
+        ":display",
+    ],
+)
+

@@ -1,4 +1,4 @@
-#include "StrategyPattern/ducks.h"
+#include "ducks.h"
 
 int main() {
   Duck* mallard = new MallardDuck();
