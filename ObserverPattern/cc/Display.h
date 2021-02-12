@@ -59,7 +59,7 @@ private:
     ISubject* weatherData;
 
 public:
-    ForecastDisplay(ISubject* weatherData);
+    ThirdPartyDisplay(ISubject* weatherData);
     void update(float temperature, float humidity, float pressure);
     void display();
 };
