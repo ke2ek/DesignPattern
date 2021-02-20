@@ -10,6 +10,7 @@ protected:
     Size size = Size::TALL;
 
 public:
+    virtual ~Beverage() { }
     virtual string getDescription() { return this->description; }
     void setSize(Size size) { this->size = size; }
     virtual Size getSize() = 0;
@@ -17,7 +18,7 @@ public:
 };
 
 
-class Espresso: public Beverage {
+class Espresso : public Beverage {
 public:
     Espresso() { this->description = "Espresso Coffee"; }
     Size getSize() { return this->size; }
@@ -25,7 +26,7 @@ public:
 };
 
 
-class HouseBlend: public Beverage {
+class HouseBlend : public Beverage {
 public:
     HouseBlend() { this->description = "House Blend Coffee"; }
     Size getSize() { return this->size; }
@@ -33,7 +34,7 @@ public:
 };
 
 
-class DarkRoast: public Beverage {
+class DarkRoast : public Beverage {
 public:
     DarkRoast() { this->description = "Dark Roast Coffee"; }
     Size getSize() { return this->size; }

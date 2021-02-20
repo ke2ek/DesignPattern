@@ -53,7 +53,7 @@ public:
 };
 
 
-class NYStyleVeggiePizza: public Pizza {
+class NYStyleVeggiePizza : public Pizza {
 public:
     NYStyleVeggiePizza() {
         name = "NY Style Sauce and Veggie Pizza";
@@ -64,7 +64,7 @@ public:
 };
 
 
-class NYStyleClamPizza: public Pizza {
+class NYStyleClamPizza : public Pizza {
 public:
     NYStyleClamPizza() {
         name = "NY Style Sauce and Clam Pizza";
@@ -75,7 +75,7 @@ public:
 };
 
 
-class NYStylePepperoniPizza: public Pizza {
+class NYStylePepperoniPizza : public Pizza {
 public:
     NYStylePepperoniPizza() {
         name = "NY Style Sauce and Pepperoni Pizza";
@@ -87,7 +87,7 @@ public:
 
 
 /* Chicago Style Pizza */
-class ChicagoStyleCheesePizza: public Pizza {
+class ChicagoStyleCheesePizza : public Pizza {
 public:
     ChicagoStyleCheesePizza() {
         name = "Chicago Style Deep Dish Cheese Pizza";
@@ -102,7 +102,7 @@ public:
 };
 
 
-class ChicagoStyleVeggiePizza: public Pizza {
+class ChicagoStyleVeggiePizza : public Pizza {
 public:
     ChicagoStyleVeggiePizza() {
         name = "Chicago Style Deep Dish Veggie Pizza";
@@ -113,7 +113,7 @@ public:
 };
 
 
-class ChicagoStyleClamPizza: public Pizza {
+class ChicagoStyleClamPizza : public Pizza {
 public:
     ChicagoStyleClamPizza() {
         name = "Chicago Style Deep Dish Clam Pizza";
@@ -128,7 +128,7 @@ public:
 };
 
 
-class ChicagoStylePepperoniPizza: public Pizza {
+class ChicagoStylePepperoniPizza : public Pizza {
 public:
     ChicagoStylePepperoniPizza() {
         name = "Chicago Style Deep Dish Pepperoni Pizza";

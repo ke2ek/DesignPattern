@@ -7,6 +7,7 @@ protected:
     virtual Pizza* createPizza(const string& type) = 0;
 
 public:
+    virtual ~PizzaStore() { }
     Pizza* orderPizza(const string& type) {
         Pizza* pizza = createPizza(type);
         pizza->prepare();
@@ -18,7 +19,7 @@ public:
 };
 
 
-class NYPizzaStore: public PizzaStore {
+class NYPizzaStore : public PizzaStore {
 protected:
     Pizza* createPizza(const string& type) {
         if (type == "cheese")
@@ -34,7 +35,7 @@ protected:
 };
 
 
-class ChicagoPizzaStore: public PizzaStore {
+class ChicagoPizzaStore : public PizzaStore {
 protected:
     Pizza* createPizza(const string& type) {
         if (type == "cheese")

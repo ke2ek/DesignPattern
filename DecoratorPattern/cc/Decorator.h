@@ -1,12 +1,13 @@
 #include "Beverage.h"
 
-interface CondimentDecorator: public Beverage {
+interface CondimentDecorator : public Beverage {
 public:
+    virtual ~CondimentDecorator() { }
     virtual string getDescription() = 0;
 };
 
 
-class Mocha: public CondimentDecorator {
+class Mocha : public CondimentDecorator {
 private:
     Beverage* beverage;
 
@@ -29,7 +30,7 @@ public:
 };
 
 
-class Soy: public CondimentDecorator {
+class Soy : public CondimentDecorator {
 private:
     Beverage* beverage;
 
@@ -60,7 +61,7 @@ public:
 };
 
 
-class Whip: public CondimentDecorator {
+class Whip : public CondimentDecorator {
 private:
     Beverage* beverage;
 
