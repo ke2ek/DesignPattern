@@ -1,9 +1,11 @@
 from abc import ABC, abstractmethod
 
+from pizza_ingredient_factory import *
 from pizza import *
 
 
 class PizzaStore(ABC):
+    """ Pizza store base class """
     
     @abstractmethod
     def _create_pizza(self, item):
@@ -11,6 +13,7 @@ class PizzaStore(ABC):
 
     def order_pizza(self, item):
         pizza = self._create_pizza(item)
+        print('--- Making a', pizza.get_name(), '---')
         pizza.prepare()
         pizza.bake()
         pizza.cut()
@@ -19,29 +22,47 @@ class PizzaStore(ABC):
 
 
 class NYPizzaStore(PizzaStore):
+    """ NY style pizza store class """
 
     def _create_pizza(self, item):
+        pizza = None
+        factory = NYPizzaIngredientFactory()
+
         if item == 'cheese':
-            return NYStyleCheesePizza()
+            pizza = CheesePizza(factory)
+            pizza.set_name('New York Style Cheese Pizza')
         elif item == 'veggie':
-            return NYStyleVeggiePizza()
+            pizza = VeggiePizza(factory)
+            pizza.set_name('New York Style Veggie Pizza')
         elif item == 'clam':
-            return NYStyleClamPizza()
+            pizza = ClamPizza(factory)
+            pizza.set_name('New York Style Clam Pizza')
         elif item == 'pepperoni':
-            return NYStylePepperoniPizza()
-        return None
+            pizza = PepperoniPizza(factory)
+            pizza.set_name('New York Style Pepperoni Pizza')
+
+        return pizza
 
 
 class ChicagoPizzaStore(PizzaStore):
+    """ Chicago style pizza store class """
     
     def _create_pizza(self, item):
+        pizza = None
+        factory = ChicagoPizzaIngredientFactory()
+
         if item == 'cheese':
-            return ChicagoStyleCheesePizza() 
+            pizza = CheesePizza(factory)
+            pizza.set_name('Chicago Style Cheese Pizza')
         elif item == 'veggie':
-            return ChicagoStyleVeggiePizza
+            pizza = VeggiePizza(factory)
+            pizza.set_name('Chicago Style Veggie Pizza')
         elif item == 'clam':
-            return ChicagoStyleClamPizza()
+            pizza = ClamPizza(factory)
+            pizza.set_name('Chicago Style Clam Pizza')
         elif item == 'pepperoni':
-            return ChicagoStylePepperoniPizza()
-        return None
+            pizza = PepperoniPizza(factory)
+            pizza.set_name('Chicago Style Pepperoni Pizza')
+
+        return pizza
 
