@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #define interface class
-using namespace std; 
+using namespace std;
 
 /* Ingredient interfaces */
 interface Dough {

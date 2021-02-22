@@ -1,12 +1,16 @@
 from abc import ABC, abstractmethod
 
-from pizza_ingredient_factory import *
-from pizza import *
+from pizza import CheesePizza
+from pizza import ClamPizza
+from pizza import VeggiePizza
+from pizza import PepperoniPizza
+from pizza_ingredient_factory import NYPizzaIngredientFactory
+from pizza_ingredient_factory import ChicagoPizzaIngredientFactory
 
 
 class PizzaStore(ABC):
     """ Pizza store base class """
-    
+
     @abstractmethod
     def _create_pizza(self, item):
         raise NotImplementedError
@@ -65,4 +69,3 @@ class ChicagoPizzaStore(PizzaStore):
             pizza.set_name('Chicago Style Pepperoni Pizza')
 
         return pizza
-
