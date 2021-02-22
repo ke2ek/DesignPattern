@@ -1,7 +1,5 @@
 from abc import ABC, abstractmethod
 
-from pizza_ingredient_factory import *
-
 
 class Pizza(ABC):
     """ Pizza base class """
@@ -17,7 +15,7 @@ class Pizza(ABC):
 
     def __str__(self):
         result = f'---- {self._name} ----\n'
-        
+
         if self._dough is not None:
             result += str(self._dough) + '\n'
 
@@ -119,4 +117,3 @@ class ClamPizza(Pizza):
         self._cheese = self._factory.create_cheese()
         self._clams = self._factory.create_clams()
         self._veggies = self._factory.create_veggies()
-
